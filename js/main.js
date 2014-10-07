@@ -99,7 +99,7 @@ function Sakamoto() {
         var left = w / 2 - scaledWidth / 2;
         var top = h / 2 - scaledHeight / 2;
         var frame = nextFrame();
-        context.imageSmoothingEnabled = false;
+        setImageSomoothingEnabled(false);
         context.drawImage(image, 0, frameHeight * frame, image.width,
                 frameHeight, left, top, scaledWidth, scaledHeight);
     }
@@ -137,7 +137,7 @@ function Rainbow() {
         var right = w / 2 - scaledWidth / 2;
         var top = h / 2 - scaledHeight / 2 + sakamoto.frameHeight;
         var frame = nextFrame();
-        context.imageSmoothingEnabled = false;
+        setImageSomoothingEnabled(false);
         for (var i = right; i >= 0; i -= scaledWidth) {
             var left = i - scaledWidth;
             context.drawImage(image, 0, frameHeight * frame, image.width,
@@ -259,4 +259,11 @@ function reset() {
 
 function invalidate() {
     draw();
+}
+
+function setImageSomoothingEnabled(enabled) {
+    context.imageSmoothingEnabled = enabled;
+    context.mozImageSmoothingEnabled = enabled;
+    context.webkitImageSmoothingEnabled = enabled;
+    context.msImageSmoothingEnabled = enabled;
 }
