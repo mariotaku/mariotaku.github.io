@@ -10,11 +10,29 @@ and open the template in the editor.
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" type="text/css" href="css/style.css">
+        <link rel="stylesheet" type="text/css" href="css/jquery.ferro.ferroMenu.css">
+        <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+
+        <script type="text/javascript" src="js/main.js"></script>
+        <script type="text/javascript" src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+        <script type="text/javascript" src="js/jquery.ferro.ferroMenu-1.2.3.min.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function () {
+                $("#nav").ferroMenu({
+                    position: "right-top",
+                    rotation: 720
+                });
+            });
+        </script>
     </head>
     <body>
-        <a href="http://about.me/mariotaku">
-            <canvas id="main_canvas">Your browser does not support HTML5 canvas, such a shame!</canvas>
-        </a>
-        <script src="js/main.js"></script>
+        <canvas id="main_canvas">Your browser does not support HTML5 canvas, such a shame!</canvas>
+        <ul id="nav" class="menu">
+            <li><a href="http://twitter.com/mariotaku"><i class="fa fa-twitter"></i></a></li>
+            <li><a href="http://instagram.com/mariotaku"><i class="fa fa-instagram"></i></a></li>
+            <li><a href="http://weibo.com/mariotaku"><i class="fa fa-weibo"></i></a></li>
+            <li><a href="https://github.com/mariotaku"><i class="fa fa-github"></i></a></li>
+            <li><a href="http://steamcommunity.com/id/mariotaku"><i class="fa fa-steam"></i></a></li>
+        </ul>
     </body>
 </html>

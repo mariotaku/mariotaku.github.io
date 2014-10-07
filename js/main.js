@@ -209,20 +209,25 @@ function Star(row, col, frame, reversed) {
     }
 }
 
-var canvas = document.getElementById('main_canvas');
-var context = canvas.getContext('2d');
+var canvas, context;
 
 
 window.addEventListener("resize", resize);
 window.setInterval(invalidate, 70);
+window.onload = init;
 
-if (context) {
-    reset();
-    draw();
+function init() {
+    canvas = document.getElementById('main_canvas');
+    context = canvas.getContext('2d');
+    
+    if (context) {
+        reset();
+        draw();
+    }
 }
 
-
 function draw() {
+    if (!canvas || !context) return;
     // Set canvas size
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
