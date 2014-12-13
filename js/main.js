@@ -79,7 +79,12 @@ function Sakamoto() {
     this.frameWidth = 0;
     this.frameHeight = 0;
     var image = new Image();
-    image.src = "assets/sakamoto.png";
+    var today = new Date();
+    if (today.getMonth() == 11) {
+        image.src = "assets/sakamoto_santa.png";
+    } else {
+        image.src = "assets/sakamoto.png";
+    }
     image.onload = function () {
         obj.loaded = true;
         obj.frameWidth = image.width;
